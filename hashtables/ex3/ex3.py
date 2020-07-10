@@ -1,8 +1,24 @@
+from collections import defaultdict
+
+
+
+
+
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
     # Your code here
+
+    lookup = defaultdict(lambda: [0]*len(arrays))
+
+    for i in range(len(arrays)):
+
+        for integer in array:
+
+
+
+
 
     return result
 

@@ -11,4 +11,22 @@ def reconstruct_trip(tickets, length):
     """
     # Your code here
 
+    lookup = {}
+
+    for ticket in tickets:
+
+        lookup[ticket.source] = ticket.destination
+
+    print(lookup)
+
+
+    start = lookup["NONE"]
+
+    route = [start]
+
+    for _ in range(length - 1):
+
+        route.append(lookup[route[-1]])
+
+
     return route

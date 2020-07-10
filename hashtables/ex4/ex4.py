@@ -4,7 +4,32 @@ def has_negatives(a):
     """
     # Your code here
 
-    return result
+    solutions = []
+
+    lookup = {}
+
+    for integer in a:
+
+        if integer < 0:
+
+            lookup[0 - integer] = integer
+
+
+    for integer in a:
+
+        if integer > 0:
+
+            try:
+
+                if integer + lookup[integer] == 0:
+
+                    solutions.append(integer)
+
+            except:
+
+                continue
+    print(solutions)
+    return solutions
 
 
 if __name__ == "__main__":
