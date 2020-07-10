@@ -1,5 +1,5 @@
 # Your code here
-
+from collections import defaultdict
 
 
 def finder(files, queries):
@@ -8,7 +8,23 @@ def finder(files, queries):
     """
     # Your code here
 
+
+    lookup = defaultdict(lambda:[])
+
+
+    for path in files:
+
+        lookup[path.rsplit('/', 1)[-1]].append(path)
+
+    result = []
+
+    for query in queries:
+
+        result = result + lookup[query]
+
+    
     return result
+
 
 
 if __name__ == "__main__":

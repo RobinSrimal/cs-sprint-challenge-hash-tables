@@ -1,27 +1,26 @@
-from collections import defaultdict
-
-
-
-
-
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
     # Your code here
 
-    lookup = defaultdict(lambda: [0]*len(arrays))
+    lookup = {}
+    length = len(arrays)
 
-    for i in range(len(arrays)):
+    for array in arrays:
 
-        for integer in array:
+        for num in array:
 
+            if num in lookup:
 
+                lookup[num] += 1
 
+            else:
 
+                lookup[num] = 1
 
-    return result
-
+    # return nums from cache which occur in all arrays
+    return [num[0] for num in lookup.items() if num[1] is length]
 
 if __name__ == "__main__":
     arrays = []
